@@ -8,6 +8,10 @@ void setup() {
 }
 
 void loop() {
+  respondToIRRemote();
+}
+
+void respondToIRRemote() {
   if (irReceive.decode(&irResults)) {
     switch (irResults.value) {
       case BTN_0: setSpeed(0); break;
