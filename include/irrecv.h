@@ -12,7 +12,7 @@
 #define BTN_6 0xFF7A85
 #define BTN_7 0xFF10EF
 #define BTN_8 0xFF38C7
-#define BTN_8 0xFF5AA5
+#define BTN_9 0xFF5AA5
 #define BTN_FORWARD 0xFF629D
 #define BTN_BACKWARD 0xFFA857
 #define BTN_LEFT 0xFF22DD
