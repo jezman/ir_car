@@ -1,9 +1,23 @@
 #include <Arduino.h>
+#include <irrecv.h>
+
+#define UART_DEBUG 1
 
 void setup() {
-  // put your setup code here, to run once:
+  irReceive.enableIRIn();
+
+  #if UART_DEBUG
+  Serial.begin(9600);
+  Serial.println("IR Receiver enabled.");
+  #endif
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (irReceive.decode(&irResults)) {
+    #if UART_DEBUG
+    Serial.println(irResults.value, HEX);
+    #endif
+
+    irReceive.resume();
+  }
 }
