@@ -10,7 +10,7 @@
 L298N leftWheel(ENA, IN1, IN2);
 L298N rightWheel(ENB, IN3, IN4);
 
-unsigned short speed = 0;
+unsigned short speed = 70;
 
 void setSpeed(u16 value);
 void setSpeed(u16 value) {
