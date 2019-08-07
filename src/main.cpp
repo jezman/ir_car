@@ -2,6 +2,9 @@
 
 void setup() {
   irReceive.enableIRIn();
+  #ifdef VERBOSE
+  Serial.begin(9600);
+  #endif
 
   leftWheel.setSpeed(speed);
   rightWheel.setSpeed(speed);
@@ -26,22 +29,27 @@ void respondToIRRemote() {
       case BTN_9: setSpeed(255); break;
 
       case BTN_FORWARD:
+        VERBOSE_PRINT("go to: forward");
         leftWheel.forward();
         rightWheel.forward();
         break;
       case BTN_BACKWARD:
+        VERBOSE_PRINT("go to: backward");
         leftWheel.backward();
         rightWheel.backward();
         break;
       case BTN_RIGHT:
+        VERBOSE_PRINT("move to: right");
         leftWheel.forward();
         rightWheel.stop();
         break;
       case BTN_LEFT:
+        VERBOSE_PRINT("move to: left");
         leftWheel.stop();
         rightWheel.forward();
         break;
       case BTN_OK:
+        VERBOSE_PRINT("stop");
         leftWheel.stop();
         rightWheel.stop();
     }
